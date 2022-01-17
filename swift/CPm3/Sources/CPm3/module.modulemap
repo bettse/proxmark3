@@ -1,0 +1,5 @@
+module CPm3 {
+    header "../../Headers/CPm3-Bridging-Header.h"
+    link "pm3rrg_rdv4"
+    export *
+}
