@@ -30,6 +30,10 @@ extern "C" {
 
 #define _USE_MATH_DEFINES
 
+#ifdef DEBUG
+#undef DEBUG
+#endif
+
 typedef enum {STYLE_BAR, STYLE_MIXED, STYLE_VALUE} barMode_t;
 typedef enum logLevel {NORMAL, SUCCESS, INFO, FAILED, WARNING, ERR, DEBUG, INPLACE, HINT} logLevel_t;
 typedef enum emojiMode {EMO_ALIAS, EMO_EMOJI, EMO_ALTTEXT, EMO_NONE} emojiMode_t;
