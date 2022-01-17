@@ -14,7 +14,7 @@ pm3 *pm3_get_current_dev(void);
 */
 
 port.withCString { port in
-    let pm3 = pm3_open(UnsafeMutablePointer(mutating: port));
+    let pm3 = pm3_open(port);
     print("Opened")
     let name = String(cString: pm3_name_get(pm3))
     print("name: \(name)")
@@ -22,7 +22,7 @@ port.withCString { port in
 
     print("Running `\(cmd)`")
     cmd.withCString { cmd in
-        let result = pm3_console(pm3, UnsafeMutablePointer(mutating: cmd));
+        let result = pm3_console(pm3, cmd);
         print("Result of command: \(result)")
     }
 
