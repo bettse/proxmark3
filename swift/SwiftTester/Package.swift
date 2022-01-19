@@ -5,14 +5,27 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftTester",
+    platforms: [
+        .macOS("11.3"),
+        .iOS("15.0"),
+    ],
     dependencies: [
         .package(name: "CPm3", path: "../CPm3"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .executableTarget(
             name: "SwiftTester",
-            dependencies: ["CPm3"]),
+            dependencies: ["CPm3"]
+        /*
+        ),
+        .target(
+            name: "dylib",
+            path: "../../client/experimental_lib/build/",
+            resources: [
+                //.process("Resources")
+                .copy("libpm3rrg_rdv4.dylib"),
+            ]
+*/
+        )
     ]
 )

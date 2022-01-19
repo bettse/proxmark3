@@ -19,7 +19,7 @@ public class PM3 {
     }
 
     public func console(_ cmd: String) {
-        let result = pm3_console(pm3, cmd);
+        let _ = pm3_console(pm3, cmd);
     }
 }
 
